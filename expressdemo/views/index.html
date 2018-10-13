@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>index</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>
+  <style type="text/css">
+    a {
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <h1><%= title %></h1> -->
+  <!-- <p>Welcome to <%= title %></p> -->
+  <div id='app'>
+    <router-link to='/login'>登录</router-link>
+    <router-view></router-view>
+  </div>
+  <script type="text/javascript">
+    const Login = {
+      template: "<div>登录哈哈哈</div>"
+    }
+    const routes = [
+      {
+        path: '/login',
+        component: Login
+      }
+    ]
+    const router = new VueRouter({
+      routes: routes
+    })
+    // const app = new Vue({
+    //   router
+    // }).$mount('#app')
+    var vm = new Vue({
+      el: '#app',
+      router: router
+    })
+  </script>
+</body>
+
+</html>

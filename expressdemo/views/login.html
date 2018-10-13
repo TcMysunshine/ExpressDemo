@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>登录</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <style type="text/css">
+        a {
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='loginForm'>
+        <form>
+            <label for="">用户名</label>
+            <input type="text" name='username' v-model='username'>
+            <p>{{username}}</p>
+            <label for="">密码</label>
+            <input type="password" name='password' v-model='password'>
+            <p>{{password}}</p>
+            <button >登录</button>
+            
+        </form>
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#loginForm',
+            data: {
+                username:'',
+                password:''
+            }
+        })
+      </script>
+</body>
+
+</html>
