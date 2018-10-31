@@ -52,6 +52,7 @@ router.post('/addUser', function (req, res, next) {
 router.get('/queryAllUser', function (req, res, next) {
   // 从连接池获取连接 
   pool.getConnection(function (err, connection) {
+    if (err) throw err
     connection.query(userSql.queryAll, function (err, result) {
       console.log(err)
       console.log(result)
